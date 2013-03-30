@@ -9,18 +9,18 @@
   <dt><strong><%= model_class.human_attribute_name(:semester) %>:</strong></dt>
   <dd><%= @training.semester %></dd>
   <dt><strong><%= model_class.human_attribute_name(:instructor_id) %>:</strong></dt>
-  <dd><%= @training.instructor.name %></dd>
+  <dd><%= @training.instructor_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:career_id) %>:</strong></dt>
-  <dd><%= @training.career.name %></dd>
+  <dd><%= @training.career_id %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              trainings_path, :class => 'btn'  %>
+              instructor_trainings_path, :class => 'btn'  %>
   <%#= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_training_path(@training), :class => 'btn' %>
+              edit_instructor_training_path(@training), :class => 'btn' %>
   <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              training_path(@training),
+              instructor_training_path(@training),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

@@ -1,0 +1,32 @@
+<%- model_class = Contract -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:contact_name) %>:</strong></dt>
+  <dd><%= @contract.contact_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact_phone) %>:</strong></dt>
+  <dd><%= @contract.contact_phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @contract.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kind) %>:</strong></dt>
+  <dd><%= @contract.kind %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:training_student_id) %>:</strong></dt>
+  <dd><%= @contract.training_student_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
+  <dd><%= @contract.company_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+    request.referrer || instructor_trainings_path, :class => 'btn'  %>
+  <%= link_to "Meetings", instructor_contract_meetings_path(@contract) %>
+  <%#= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_instructor_contract_path(@contract), :class => 'btn' %>
+  <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              instructor_contract_path(@contract),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

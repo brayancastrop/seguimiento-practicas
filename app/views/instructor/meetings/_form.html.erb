@@ -1,0 +1,20 @@
+<%= form_for @meeting, url: url, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :scheduled_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :scheduled_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :accomplished, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :accomplished, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                instructor_contract_meetings_path(@contract), :class => 'btn' %>
+  </div>
+<% end %>

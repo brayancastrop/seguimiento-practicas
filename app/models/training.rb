@@ -2,6 +2,8 @@ class Training < ActiveRecord::Base
   belongs_to :instructor, inverse_of: :trainings
   belongs_to :career, inverse_of: :trainings
   has_many :training_students, dependent: :destroy, inverse_of: :training
+  has_many :students, through: :training_student
+  has_many :students, through: :training_students
   
   
   accepts_nested_attributes_for :training_students, :allow_destroy => true

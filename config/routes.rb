@@ -1,13 +1,22 @@
 Sena::Application.routes.draw do
 
-
   devise_for :admins
 
   mount RailsAdmin::Engine => '/mngmnt', :as => 'rails_admin'
   
   devise_for :instructors
   
-  resources :trainings, only: [:index, :show]
+  namespace :instructor do
+    resources :trainings, only: [:index, :show] do
+      resources :training_students, only: [:index, :show]
+    end
+    resources :contracts, only: [:show] do
+      resources :meetings
+    end
+    resources :meetings, only: [] do
+      resources :observations
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +67,7 @@ Sena::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'trainings#index'
+  root :to => 'instructor/trainings#index'
 
   # See how all your routes lay out with "rake routes"
 

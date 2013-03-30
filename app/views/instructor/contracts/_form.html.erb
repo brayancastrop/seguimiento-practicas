@@ -1,0 +1,44 @@
+<%= form_for @contract, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :contact_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contact_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact_phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contact_phone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kind, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :kind, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :training_student_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :training_student_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :company_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :company_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                instructor_contracts_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TrainingsController do
+describe Instructor::TrainingStudentssController do
 
   describe "GET 'index'" do
     it "returns http success" do

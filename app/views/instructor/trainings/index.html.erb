@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:year) %></th>
       <th><%= model_class.human_attribute_name(:semester) %></th>
       <th><%= model_class.human_attribute_name(:instructor_id) %></th>
@@ -16,17 +17,18 @@
   <tbody>
     <% @trainings.each do |training| %>
       <tr>
+        <td><%= link_to training.id, instructor_training_path(training) %></td>
         <td><%= training.year %></td>
         <td><%= training.semester %></td>
-        <td><%= training.instructor.name %></td>
-        <td><%= training.career.name %></td>
+        <td><%= training.instructor_id %></td>
+        <td><%= training.career_id %></td>
         <td><%=l training.created_at %></td>
         <td>
-          <%= link_to "Details", training_path(training) %>
+          <%= link_to "Training Students", instructor_training_training_students_path(training) %>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_training_path(training), :class => 'btn btn-mini' %>
+                      edit_instructor_training_path(training), :class => 'btn btn-mini' %>
           <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      training_path(training),
+                      instructor_training_path(training),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -37,5 +39,5 @@
 </table>
 
 <%#= link_to t('.new', :default => t("helpers.links.new")),
-            new_training_path,
+            new_instructor_training_path,
             :class => 'btn btn-primary' %>

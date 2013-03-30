@@ -9,7 +9,10 @@ class Instructor < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :identification, as: [:default, :admin]
 
   has_many :trainings
-
+  has_many :training_students, through: :trainings
+  has_many :contracts, through: :training_students
+  has_many :meetings, through: :contracts
+  has_many :observations, through: :meetings
   validates :first_name, :last_name, presence: true
   validates :identification, presence: true, uniqueness: true
 
