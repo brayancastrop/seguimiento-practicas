@@ -34,6 +34,7 @@
     <% end %>
   </tbody>
 </table>
+<div><%= paginate @meetings %></div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_instructor_contract_meeting_path,

@@ -10,6 +10,9 @@ class Meeting < ActiveRecord::Base
     end
   end 
 
+  paginates_per 10
+  
+
   def name
     [contract.name, scheduled_at.to_s].join(" - ")
   end

@@ -2,7 +2,7 @@ class Instructor::MeetingsController < InstructorController
   def index
     @instructor = current_instructor
     @contract = @instructor.contracts.find params[:contract_id]
-    @meetings = @contract.meetings
+    @meetings = @contract.meetings.page(params[:page]).per(params[:limit])
     respond_with @meetings
   end
 

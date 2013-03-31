@@ -32,6 +32,7 @@
     <% end %>
   </tbody>
 </table>
+<div><%= paginate @observations %></div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_instructor_meeting_observation_path(@meeting),

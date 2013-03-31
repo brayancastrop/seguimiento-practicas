@@ -40,6 +40,7 @@
     <% end %>
   </tbody>
 </table>
+<div><%= paginate @contracts %></div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_instructor_contract_path,

@@ -19,6 +19,8 @@ class Training < ActiveRecord::Base
     end
   end
 
+  paginates_per 10
+
   def name
     [career.name, year, semester].join(" ")
   end

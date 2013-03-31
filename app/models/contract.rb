@@ -15,6 +15,8 @@ class Contract < ActiveRecord::Base
     end
   end
 
+  paginates_per 10  
+
   def name
     [training_student.name, company.name].join(" - ")
   end

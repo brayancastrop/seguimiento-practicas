@@ -4,5 +4,6 @@ class Observation < ActiveRecord::Base
 
   validates :content, :meeting, presence: true
 
+  paginates_per 10  
 
 end

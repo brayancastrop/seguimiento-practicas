@@ -12,6 +12,8 @@ class TrainingStudent < ActiveRecord::Base
       exclude_fields :contract
     end
   end
+
+  paginates_per 10  
   
   def name 
     [training.name, student.name].join(" - ")
