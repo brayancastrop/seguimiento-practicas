@@ -16,7 +16,7 @@ class TrainingStudent < ActiveRecord::Base
   paginates_per 10  
   
   def name 
-    [training.name, student.name].join(" - ")
+    [training.try(:name), student.try(:name)].join(" - ")
   end
   
 end

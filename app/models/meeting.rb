@@ -14,6 +14,6 @@ class Meeting < ActiveRecord::Base
   
 
   def name
-    [contract.name, scheduled_at.to_s].join(" - ")
+    [contract.try(:name), scheduled_at.to_s].join(" - ")
   end
 end

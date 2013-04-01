@@ -11,7 +11,7 @@ Sena::Application.routes.draw do
       resources :training_students, only: [:index, :show]
     end
     resources :contracts, only: [:show] do
-      resources :meetings
+      resources :meetings, only: [:index, :show, :new, :create]
     end
     resources :meetings, only: [] do
       resources :observations
