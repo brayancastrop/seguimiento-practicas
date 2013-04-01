@@ -5,15 +5,15 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:scheduled_at) %>:</strong></dt>
-  <dd><%= @meeting.scheduled_at %></dd>
+  <dd><%= l @meeting.scheduled_at, format: :long %></dd>
   <dt><strong><%= model_class.human_attribute_name(:accomplished) %>:</strong></dt>
-  <dd><%= @meeting.accomplished %></dd>
+  <dd><%= t @meeting.accomplished.to_s %></dd>
   <dt><strong><%= model_class.human_attribute_name(:contract_id) %>:</strong></dt>
-  <dd><%= @meeting.contract_id %></dd>
+  <dd><%= @meeting.contract.name %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to "Observations",
+  <%= link_to t('.observations'),
               instructor_meeting_observations_path(@meeting), :class => 'btn'  %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
               instructor_contract_meetings_path(@contract), :class => 'btn'  %>

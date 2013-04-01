@@ -18,7 +18,7 @@
         <td><%= training_student.student.name %></td>
         <td><%=l training_student.created_at %></td>
         <td>
-          <%= link_to "Contract", instructor_contract_path(training_student.contract) %>
+          <%= link_to t('.contract'), instructor_contract_path(training_student.contract) %>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_instructor_training_student_path(training_student), :class => 'btn btn-mini' %>
           <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),

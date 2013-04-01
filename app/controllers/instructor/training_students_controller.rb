@@ -2,7 +2,7 @@ class Instructor::TrainingStudentsController < InstructorController
    def index
     @instructor = current_instructor
     @training = @instructor.trainings.find params[:training_id]
-    @training_students = @training.training_students
+    @training_students = @training.training_students.page(params[:page]).per(params[:limit])
     respond_with @trainings_students
   end
 

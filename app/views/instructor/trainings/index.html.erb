@@ -1,6 +1,6 @@
 <%- model_class = Training -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%= t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -24,7 +24,7 @@
         <td><%= training.career_id %></td>
         <td><%=l training.created_at %></td>
         <td>
-          <%= link_to "Training Students", instructor_training_training_students_path(training) %>
+          <%= link_to t('.training_students'), instructor_training_training_students_path(training) %>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_instructor_training_path(training), :class => 'btn btn-mini' %>
           <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),

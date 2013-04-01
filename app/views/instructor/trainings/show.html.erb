@@ -9,9 +9,9 @@
   <dt><strong><%= model_class.human_attribute_name(:semester) %>:</strong></dt>
   <dd><%= @training.semester %></dd>
   <dt><strong><%= model_class.human_attribute_name(:instructor_id) %>:</strong></dt>
-  <dd><%= @training.instructor_id %></dd>
+  <dd><%= @training.instructor.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:career_id) %>:</strong></dt>
-  <dd><%= @training.career_id %></dd>
+  <dd><%= @training.career.name %></dd>
 </dl>
 
 <div class="form-actions">

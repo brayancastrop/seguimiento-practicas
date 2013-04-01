@@ -17,10 +17,10 @@
     <% @meetings.each do |meeting| %>
       <tr>
         <td><%= link_to meeting.id, instructor_contract_meeting_path(@contract, meeting) %></td>
-        <td><%= meeting.scheduled_at %></td>
-        <td><%= meeting.accomplished %></td>
-        <td><%= meeting.contract_id %></td>
-        <td><%=l meeting.created_at %></td>
+        <td><%=l meeting.scheduled_at, format: :long %></td>
+        <td><%= t(meeting.accomplished.to_s) %></td>
+        <td><%= meeting.contract.name %></td>
+        <td><%=l meeting.created_at, format: :long %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_instructor_contract_meeting_path(@contract, meeting), :class => 'btn btn-mini' %>

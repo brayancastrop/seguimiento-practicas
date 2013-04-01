@@ -10,6 +10,7 @@ gem "devise", "~> 2.2.3"
 gem "rails_admin", "~> 0.4.6"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "rspec-rails", "~> 2.13.0"
+gem 'rails-i18n'
 
 
 # Gems used only for assets and not required

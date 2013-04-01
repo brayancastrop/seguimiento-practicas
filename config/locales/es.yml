@@ -1,0 +1,89 @@
+es-CO:
+  "true": "Si"
+  "false": "No"
+  instructor:
+    trainings:
+      index:
+        title: "Practicas"
+        training_students: "Estudiantes"
+        actions: "Acciones"
+      show:
+        title: "Practicas"        
+    training_students:
+      index:
+        title: "Estudiantes en practica"
+        actions: "Acciones"
+        contract: "Contrato"
+      show:
+        title: "Estudiante en practica"      
+    contracts:
+      index:
+        title: "Contratos"
+        actions: "Acciones"        
+      show:
+        meetings: "Visitas"
+    meetings:
+      index:
+        title: "Visitas"
+        actions: "Acciones"
+      show:
+        title: "Visitas"
+        observations: "Observaciones"
+    observations:
+      index:
+        title: "Observaciones"
+        actions: "Acciones"
+  layouts:
+    instructor:
+      trainings: "Practicas"
+  attributes:
+    created_at: "Fecha de creacion"    
+    updated_at: "Fecha de actualizacion"
+    name: "Nombre"
+  activerecord:
+    attributes:
+      training:
+        year: "Año"
+        semester: "Semestre"
+        instructor_id: "Instructor"
+        career_id: "Programa"
+      contract:
+        contact_name: "Nombre del Contacto"
+        contact_phone: "Telefono del contacto"
+        status: "Estado"
+        kind: "Tipo"
+        training_student_id: "Estudiante en practica"
+        company_id: "Empresa"
+      instructor:
+        first_name: "Nombres"
+        last_name: "Apellidos"
+        identification: "Identificacion"
+      meeting:
+        scheduled_at: "Fecha"
+        accomplished: "Realizada?"
+        contract_id: "Contrato"
+      observation:
+        content: "Anotaciones"
+        meeting_id: "Visita"
+      training_student:
+        student_id: "Estudiante"
+    models:
+      contract: "Contrato"
+      observation: "Observacion"
+      admin: "Administrador"
+      career: "Programa"
+      company: "Empresa"
+      instructor: "Instructor"
+      meeting: "Visita"
+      student: "Estudiante"
+      training: "Practica"
+      training_student: "Estudiante en practica"
+  helpers:
+    links:
+      back: "Atras"
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm: "Esta seguro?"
+      new: "Crear"
+    titles:
+      edit: "Editar %{model}"

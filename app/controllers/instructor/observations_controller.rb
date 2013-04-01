@@ -2,7 +2,7 @@ class Instructor::ObservationsController < InstructorController
   def index
     @instructor = current_instructor
     @meeting = @instructor.meetings.find params[:meeting_id]
-    @observations = @meeting.observations
+    @observations = @meeting.observations.page(params[:page]).per(params[:limit])
     respond_with @observations
   end
 

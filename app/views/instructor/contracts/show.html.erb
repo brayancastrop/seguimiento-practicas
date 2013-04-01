@@ -13,15 +13,15 @@
   <dt><strong><%= model_class.human_attribute_name(:kind) %>:</strong></dt>
   <dd><%= @contract.kind %></dd>
   <dt><strong><%= model_class.human_attribute_name(:training_student_id) %>:</strong></dt>
-  <dd><%= @contract.training_student_id %></dd>
+  <dd><%= @contract.training_student.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-  <dd><%= @contract.company_id %></dd>
+  <dd><%= @contract.company.name %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
     request.referrer || instructor_trainings_path, :class => 'btn'  %>
-  <%= link_to "Meetings", instructor_contract_meetings_path(@contract) %>
+  <%= link_to t('.meetings'), instructor_contract_meetings_path(@contract), :class => 'btn' %>
   <%#= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_instructor_contract_path(@contract), :class => 'btn' %>
   <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),

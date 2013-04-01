@@ -17,8 +17,8 @@
       <tr>
         <td><%= link_to observation.id, instructor_meeting_observation_path(@meeting, observation) %></td>
         <td><%= observation.content %></td>
-        <td><%= observation.meeting_id %></td>
-        <td><%=l observation.created_at %></td>
+        <td><%= observation.meeting.name %></td>
+        <td><%=l observation.created_at, format: :long %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_instructor_meeting_observation_path(@meeting, observation), :class => 'btn btn-mini' %>
