@@ -1,4 +1,5 @@
 class Instructor::MeetingsController < InstructorController
+  before_filter :meetings_count, only: [:new, :create]
   def index
     @instructor = current_instructor
     @contract = @instructor.contracts.find params[:contract_id]
@@ -41,5 +42,17 @@ class Instructor::MeetingsController < InstructorController
     @contract = @instructor.contracts.find params[:contract_id]
     @meeting = @contract.meetings.find params[:id]
     respond_with @meeting
+  end
+
+  private
+
+  def meetings_count
+    @instructor = current_instructor
+    @contract = @instructor.contracts.find params[:contract_id]
+    meetings = @contract.meetings.count
+    if meetings >= 3
+      flash[:notice] = "Has alcanzado el limite de visitas permitido"
+      redirect_to instructor_contract_meetings_path(@contract)
+    end
   end
 end

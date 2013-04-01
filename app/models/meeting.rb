@@ -12,8 +12,13 @@ class Meeting < ActiveRecord::Base
 
   paginates_per 10
   
+  scope :accomplished, joins(:observations).group("meetings.id").having("count(observations.id) > 0")  
 
   def name
     [contract.try(:name), scheduled_at.to_s].join(" - ")
+  end
+
+  def accomplished?
+    observations.count > 0
   end
 end
