@@ -8,6 +8,9 @@ Sena::Application.routes.draw do
   
   namespace :instructor do
     resources :trainings, only: [:index, :show] do
+      member do
+        get :students
+      end
       resources :training_students, only: [:index, :show]
     end
     resources :contracts, only: [:show] do

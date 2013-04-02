@@ -1,0 +1,60 @@
+<%- model_class = Training -%>
+<%- training_student_class = TrainingStudent -%>
+<%- student_class = Student -%>
+<%- company_class = Company -%>
+<%- contract_class = Contract -%>
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:identification) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:last_name) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:first_name) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:phone) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:cellphone) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student_class.human_attribute_name(:email) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company_class.model_name.human %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:contact_address) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:contact_name) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:contact_phone) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:start_at) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:end_at) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t('.first_visit') %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t('.second_visit') %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t('.final_evaluation') %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:status) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:kind) %></Data></Cell>
+      </Row>
+    <% @training_students.each do |training_student| %>
+      <%- student = training_student.student -%>
+      <%- contract = training_student.contract -%>
+      <%- company = contract.company -%>
+      <%- meetings = contract.meetings.accomplished -%>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= student.identification %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student.last_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student.first_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student.phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student.cellphone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= student.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_address %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.start_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.end_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.first.observations.first.content if meetings.first.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.second.observations.first.content if meetings.second.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.third.observations.first.content if meetings.third.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.status %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.kind %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

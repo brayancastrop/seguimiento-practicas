@@ -8,7 +8,11 @@ es-CO:
         training_students: "Estudiantes"
         actions: "Acciones"
       show:
-        title: "Practicas"        
+        title: "Practicas"
+      students:
+        first_visit: "1a. visita"
+        second_visit: "2a. visita"
+        third_visit: "Evaluacion Final"        
     training_students:
       index:
         title: "Estudiantes en practica"
@@ -16,6 +20,7 @@ es-CO:
         contract: "Contrato"
       show:
         title: "Estudiante en practica"      
+        students: "Lista de estudiantes"
     contracts:
       index:
         title: "Contratos"
@@ -48,8 +53,11 @@ es-CO:
         instructor_id: "Instructor"
         career_id: "Programa"
       contract:
-        contact_name: "Nombre del Contacto"
+        contact_name: "Nombre del contacto"
         contact_phone: "Telefono del contacto"
+        contact_address: "Direccion"
+        start_at: "Inicio"
+        end_at: "Final"
         status: "Estado"
         kind: "Tipo"
         training_student_id: "Estudiante en practica"
@@ -67,6 +75,11 @@ es-CO:
         meeting_id: "Visita"
       training_student:
         student_id: "Estudiante"
+      student:
+        first_name: "Nombres"
+        last_name: "Apellidos"
+        phone: "Telefono"
+        cellphone: "Celular"
     models:
       contract: "Contrato"
       observation: "Observacion"
@@ -85,5 +98,6 @@ es-CO:
       destroy: "Eliminar"
       confirm: "Esta seguro?"
       new: "Crear"
+      export: "Exportar"
     titles:
       edit: "Editar %{model}"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401050308) do
+ActiveRecord::Schema.define(:version => 20130402033800) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20130401050308) do
     t.integer  "company_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "contact_address"
+    t.date     "start_at"
+    t.date     "end_at"
   end
 
   add_index "contracts", ["company_id"], :name => "index_contracts_on_company_id"
