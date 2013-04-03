@@ -1,7 +1,7 @@
 class Training < ActiveRecord::Base
   belongs_to :instructor, inverse_of: :trainings
   belongs_to :career, inverse_of: :trainings
-  has_many :training_students, dependent: :destroy, inverse_of: :training
+  has_many :training_students,  inverse_of: :training, dependent: :destroy
   has_many :students, through: :training_student
   has_many :students, through: :training_students
   
