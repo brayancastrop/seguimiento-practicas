@@ -9,6 +9,7 @@ es-CO:
         actions: "Acciones"
       show:
         title: "Practicas"
+        students: "Estudiantes"
       students:
         first_visit: "1a. visita"
         second_visit: "2a. visita"
