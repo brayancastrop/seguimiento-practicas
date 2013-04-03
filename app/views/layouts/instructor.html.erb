@@ -48,7 +48,7 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to t('.trainings'), instructor_trainings_path  %></li>
-              <li><%#= link_to "Meetings", meetings_path  %></li>
+              <li><%= link_to('Salir', destroy_instructor_session_path, :method => :delete) %> </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -74,7 +74,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>@brayancastrop</p>
+        <p></p>
       </footer>
 
     </div> <!-- /container -->

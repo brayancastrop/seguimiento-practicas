@@ -12,3 +12,7 @@
 ["brayancastrop@gmail.com"].each do |email|
   Admin.create email: email, password: "password"
 end
+
+%w{Pasantias, Contratado, Retirado, Cancelado, Aplazado, Condionado}.each do |contract_type_name|
+  ContractType.create name: contract_type_name
+end

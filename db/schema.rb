@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402033800) do
+ActiveRecord::Schema.define(:version => 20130403152227) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,9 +35,16 @@ ActiveRecord::Schema.define(:version => 20130402033800) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "code"
   end
 
   create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contract_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -47,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20130402033800) do
     t.string   "contact_name"
     t.string   "contact_phone"
     t.string   "status"
-    t.string   "kind"
     t.integer  "training_student_id"
     t.integer  "company_id"
     t.datetime "created_at",          :null => false
@@ -55,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130402033800) do
     t.string   "contact_address"
     t.date     "start_at"
     t.date     "end_at"
+    t.integer  "contract_type_id"
   end
 
   add_index "contracts", ["company_id"], :name => "index_contracts_on_company_id"
