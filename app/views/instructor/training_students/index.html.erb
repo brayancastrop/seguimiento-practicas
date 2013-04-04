@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to training_student.id, instructor_training_training_student_path(@training, training_student) %></td>
         <td><%= training_student.student.name %></td>
-        <td><%=l training_student.created_at %></td>
+        <td><%=l training_student.created_at, format: :long %></td>
         <td>
           <%= link_to t('.contract'), instructor_contract_path(training_student.contract) %>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),

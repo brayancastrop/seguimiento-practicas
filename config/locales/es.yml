@@ -54,7 +54,7 @@ es-CO:
         instructor_id: "Instructor"
         career_id: "Programa"
       contract:
-        contact_name: "Nombre del contacto"
+        contact_name: "Jefe inmediato"
         contact_phone: "Telefono del contacto"
         contact_address: "Direccion"
         start_at: "Inicio"

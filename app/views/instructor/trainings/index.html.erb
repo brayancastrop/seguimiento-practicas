@@ -20,9 +20,9 @@
         <td><%= link_to training.id, instructor_training_path(training) %></td>
         <td><%= training.year %></td>
         <td><%= training.semester %></td>
-        <td><%= training.instructor_id %></td>
-        <td><%= training.career_id %></td>
-        <td><%=l training.created_at %></td>
+        <td><%= training.instructor.name %></td>
+        <td><%= training.career.name %></td>
+        <td><%=l training.created_at, format: :long %></td>
         <td>
           <%= link_to t('.training_students'), instructor_training_training_students_path(training) %>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),
