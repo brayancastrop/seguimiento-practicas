@@ -29,7 +29,7 @@
         <th><%= t('.second_visit')%></th>            
         <th><%= t('.final_evaluation')%></th>            
         <th><%= contract_class.human_attribute_name(:status) %></th>
-        <th><%= contract_class.human_attribute_name(:kind) %></th>            
+        <th><%= contract_class.human_attribute_name(:contract_type) %></th>            
       </tr>
     </thead>
     <tbody>
@@ -55,7 +55,7 @@
           <td><%= meetings.second.observations.first.content if meetings.second.present? %></td>
           <td><%= meetings.third.observations.first.content if meetings.third.present? %></td>
           <td><%= contract.status %></td>
-          <td><%= contract.kind %></td>
+          <td><%= contract.contract_type.name %></td>
         </tr>
       <% end %>
     </tbody>

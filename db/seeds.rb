@@ -13,6 +13,10 @@
   Admin.create email: email, password: "password"
 end
 
-%w{Pasantias, Contratado, Retirado, Cancelado, Aplazado, Condionado}.each do |contract_type_name|
-  p ContractType.create({:name => contract_type_name}, as: :admin)
+["Contrato de aprendizaje", "Contrato Laboral", "Pasantias", "Contratado", "Otros"].each do |contract_type_name|
+  ContractType.create({:name => contract_type_name}, as: :admin)
+end
+
+["Aplazado", "Cancelado", "Permiso", "Condicionado"].each do |student_status_name|
+  StudentStatus.create({name: student_status_name}, as: :admin)
 end

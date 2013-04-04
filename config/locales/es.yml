@@ -48,11 +48,13 @@ es-CO:
     name: "Nombre"
   activerecord:
     attributes:
+      career: 
+        code: "Codigo"
       training:
         year: "Año"
         semester: "Semestre"
-        instructor_id: "Instructor"
-        career_id: "Programa"
+        instructor: "Instructor"
+        career: "Programa"
       contract:
         contact_name: "Jefe inmediato"
         contact_phone: "Telefono del contacto"
@@ -60,22 +62,25 @@ es-CO:
         start_at: "Inicio"
         end_at: "Final"
         status: "Estado"
-        contract_tipe_id: "Tipo"
-        training_student_id: "Estudiante en practica"
-        company_id: "Empresa"
+        contract_type: "Tipo"
+        training_student: "Estudiante en practica"
+        company: "Empresa"
       instructor:
         first_name: "Nombres"
         last_name: "Apellidos"
         identification: "Identificacion"
+        password_confirmation: "Confirmar password"
       meeting:
         scheduled_at: "Fecha"
         accomplished: "Realizada?"
-        contract_id: "Contrato"
+        contract: "Contrato"
       observation:
         content: "Anotaciones"
-        meeting_id: "Visita"
+        meeting: "Visita"
       training_student:
-        student_id: "Estudiante"
+        student: "Estudiante"
+        student_status: "Estado"
+        training: "Practica"
       student:
         first_name: "Nombres"
         last_name: "Apellidos"
@@ -87,9 +92,11 @@ es-CO:
       admin: "Administrador"
       career: "Programa"
       company: "Empresa"
+      contract_type: "Tipo de contrato"
       instructor: "Instructor"
       meeting: "Visita"
       student: "Estudiante"
+      student_status: "Estados de estudiante"
       training: "Practica"
       training_student: "Estudiante en practica"
   helpers:

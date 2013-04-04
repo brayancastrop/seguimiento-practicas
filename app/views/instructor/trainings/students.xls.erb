@@ -28,7 +28,7 @@
         <Cell><Data ss:Type="String"><%= t('.second_visit') %></Data></Cell>
         <Cell><Data ss:Type="String"><%= t('.final_evaluation') %></Data></Cell>
         <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:status) %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:kind) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract_class.human_attribute_name(:contract_type) %></Data></Cell>
       </Row>
     <% @training_students.each do |training_student| %>
       <%- student = training_student.student -%>
@@ -52,7 +52,7 @@
         <Cell><Data ss:Type="String"><%= meetings.second.observations.first.content if meetings.second.present? %></Data></Cell>
         <Cell><Data ss:Type="String"><%= meetings.third.observations.first.content if meetings.third.present? %></Data></Cell>
         <Cell><Data ss:Type="String"><%= contract.status %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.kind %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contract_type.name %></Data></Cell>
       </Row>
     <% end %>
     </Table>

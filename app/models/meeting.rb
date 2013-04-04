@@ -14,6 +14,7 @@ class Meeting < ActiveRecord::Base
   
   scope :accomplished, joins(:observations).group("meetings.id").having("count(observations.id) > 0")  
 
+  validates :contract, presence: :true
   def name
     [contract.try(:name), scheduled_at.to_s].join(" - ")
   end

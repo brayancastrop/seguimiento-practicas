@@ -8,7 +8,7 @@
   <dd><%= l @meeting.scheduled_at, format: :long %></dd>
   <dt><strong><%= model_class.human_attribute_name(:accomplished) %>:</strong></dt>
   <dd><%= t @meeting.accomplished?.to_s %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:contract_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:contract) %>:</strong></dt>
   <dd><%= @meeting.contract.name %></dd>
 </dl>
 

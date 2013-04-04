@@ -15,7 +15,7 @@ class Training < ActiveRecord::Base
 
   rails_admin do
     edit do
-      exclude_fields :training_students
+      exclude_fields :training_students, :students
     end
   end
 

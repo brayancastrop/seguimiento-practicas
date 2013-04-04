@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403152227) do
+ActiveRecord::Schema.define(:version => 20130404023340) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -119,6 +119,12 @@ ActiveRecord::Schema.define(:version => 20130403152227) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "student_statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "identification"
     t.string   "first_name"
@@ -133,8 +139,9 @@ ActiveRecord::Schema.define(:version => 20130403152227) do
   create_table "training_students", :force => true do |t|
     t.integer  "training_id"
     t.integer  "student_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "student_status_id"
   end
 
   add_index "training_students", ["student_id"], :name => "index_training_students_on_student_id"

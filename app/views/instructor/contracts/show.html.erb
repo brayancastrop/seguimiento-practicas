@@ -10,11 +10,11 @@
   <dd><%= @contract.contact_phone %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
   <dd><%= @contract.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:kind) %>:</strong></dt>
-  <dd><%= @contract.kind %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:training_student_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:contract_type) %>:</strong></dt>
+  <dd><%= @contract.contract_type.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:training_student) %>:</strong></dt>
   <dd><%= @contract.training_student.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:company) %>:</strong></dt>
   <dd><%= @contract.company.name %></dd>
 </dl>
 
