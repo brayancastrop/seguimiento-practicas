@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:contact_name) %></th>
       <th><%= model_class.human_attribute_name(:contact_phone) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:kind) %></th>
+      <th><%= model_class.human_attribute_name(:contract_type_id) %></th>
       <th><%= model_class.human_attribute_name(:training_student_id) %></th>
       <th><%= model_class.human_attribute_name(:company_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -23,7 +23,7 @@
         <td><%= contract.contact_name %></td>
         <td><%= contract.contact_phone %></td>
         <td><%= contract.status %></td>
-        <td><%= contract.kind %></td>
+        <td><%= contract.contract_type.name %></td>
         <td><%= contract.training_student.name %></td>
         <td><%= contract.company_id %></td>
         <td><%=l contract.created_at %></td>

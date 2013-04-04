@@ -1,6 +1,6 @@
 class Meeting < ActiveRecord::Base
   belongs_to :contract
-  has_many :observations
+  has_many :observations, dependent: :destroy
   attr_accessible :scheduled_at, as: [:default, :admin]
   attr_accessible :contract_id, as: [:admin]
 

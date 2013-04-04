@@ -60,7 +60,7 @@ es-CO:
         start_at: "Inicio"
         end_at: "Final"
         status: "Estado"
-        kind: "Tipo"
+        contract_tipe_id: "Tipo"
         training_student_id: "Estudiante en practica"
         company_id: "Empresa"
       instructor:
