@@ -33,8 +33,8 @@
     <% @training_students.each do |training_student| %>
       <%- student = training_student.student -%>
       <%- contract = training_student.contract -%>
-      <%- company = contract.company -%>
-      <%- meetings = contract.meetings.accomplished -%>
+      <%- company = contract.company if contract.present? -%>
+      <%- meetings = contract.meetings.accomplished if contract.present? -%>
       <Row>
         <Cell><Data ss:Type="Number"><%= student.identification %></Data></Cell>
         <Cell><Data ss:Type="String"><%= student.last_name %></Data></Cell>
@@ -42,17 +42,17 @@
         <Cell><Data ss:Type="String"><%= student.phone %></Data></Cell>
         <Cell><Data ss:Type="String"><%= student.cellphone %></Data></Cell>
         <Cell><Data ss:Type="String"><%= student.email %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= company.name %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.contact_address %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.contact_name %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.contact_phone %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.start_at %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.end_at %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= meetings.first.observations.first.content if meetings.first.present? %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= meetings.second.observations.first.content if meetings.second.present? %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= meetings.third.observations.first.content if meetings.third.present? %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.status %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= contract.contract_type.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= company.name if contract.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_address if contract.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_name if contract.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contact_phone if contract.present?  %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.start_at if contract.present?  %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.end_at if contract.present?  %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.first.observations.first.content if contract.present? && meetings.first.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.second.observations.first.content if contract.present? && meetings.second.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= meetings.third.observations.first.content if contract.present? && meetings.third.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.status if contract.present? %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= contract.contract_type.name if contract.present? %></Data></Cell>
       </Row>
     <% end %>
     </Table>
